@@ -51,12 +51,12 @@ define(function (require, exports, module) {
         menu.addMenuItem(Commands.FILE_SAVE);
         menu.addMenuItem(Commands.FILE_SAVE_ALL);
         menu.addMenuItem(Commands.FILE_SAVE_AS);
-        menu.addMenuDivider();
-        menu.addMenuItem(Commands.FILE_LIVE_FILE_PREVIEW);
-        menu.addMenuItem(Commands.TOGGLE_LIVE_PREVIEW_MB_MODE);
-        menu.addMenuItem(Commands.FILE_PROJECT_SETTINGS);
-        menu.addMenuDivider();
-        menu.addMenuItem(Commands.FILE_EXTENSION_MANAGER);
+        //menu.addMenuDivider();
+        //menu.addMenuItem(Commands.FILE_LIVE_FILE_PREVIEW);
+        //menu.addMenuItem(Commands.TOGGLE_LIVE_PREVIEW_MB_MODE);
+        //menu.addMenuItem(Commands.FILE_PROJECT_SETTINGS);
+        //menu.addMenuDivider();
+        //menu.addMenuItem(Commands.FILE_EXTENSION_MANAGER);
         
         // suppress redundant quit menu item on mac
         if (brackets.platform !== "mac" || !brackets.nativeMenus) {
@@ -166,47 +166,47 @@ define(function (require, exports, module) {
          * Help menu
          */
         menu = Menus.addMenu(Strings.HELP_MENU, Menus.AppMenuBar.HELP_MENU);
-        menu.addMenuItem(Commands.HELP_CHECK_FOR_UPDATE);
+        //menu.addMenuItem(Commands.HELP_CHECK_FOR_UPDATE);
+	
+        //menu.addMenuDivider();
+        //if (brackets.config.how_to_use_url) {
+        //    menu.addMenuItem(Commands.HELP_HOW_TO_USE_BRACKETS);
+        //}
+        //if (brackets.config.support_url) {
+        //    menu.addMenuItem(Commands.HELP_SUPPORT);
+        //}
+        //if (brackets.config.suggest_feature_url) {
+        //    menu.addMenuItem(Commands.HELP_SUGGEST);
+        //}
+        //if (brackets.config.release_notes_url) {
+        //    menu.addMenuItem(Commands.HELP_RELEASE_NOTES);
+        //}
+        //if (brackets.config.get_involved_url) {
+        //    menu.addMenuItem(Commands.HELP_GET_INVOLVED);
+        //}
 
-        menu.addMenuDivider();
-        if (brackets.config.how_to_use_url) {
-            menu.addMenuItem(Commands.HELP_HOW_TO_USE_BRACKETS);
-        }
-        if (brackets.config.support_url) {
-            menu.addMenuItem(Commands.HELP_SUPPORT);
-        }
-        if (brackets.config.suggest_feature_url) {
-            menu.addMenuItem(Commands.HELP_SUGGEST);
-        }
-        if (brackets.config.release_notes_url) {
-            menu.addMenuItem(Commands.HELP_RELEASE_NOTES);
-        }
-        if (brackets.config.get_involved_url) {
-            menu.addMenuItem(Commands.HELP_GET_INVOLVED);
-        }
+        //menu.addMenuDivider();
+        //menu.addMenuItem(Commands.HELP_SHOW_EXT_FOLDER);
 
-        menu.addMenuDivider();
-        menu.addMenuItem(Commands.HELP_SHOW_EXT_FOLDER);
-
-        var hasAboutItem = (brackets.platform !== "mac" || !brackets.nativeMenus);
-        
-        // Add final divider only if we have a homepage URL or twitter URL or about item
-        if (hasAboutItem || brackets.config.homepage_url || brackets.config.twitter_url) {
-            menu.addMenuDivider();
-        }
-        
-        if (brackets.config.homepage_url) {
-            menu.addMenuItem(Commands.HELP_HOMEPAGE);
-        }
-        
-        if (brackets.config.twitter_url) {
-            menu.addMenuItem(Commands.HELP_TWITTER);
-        }
-        // supress redundant about menu item in mac shell
-        if (hasAboutItem) {
-            menu.addMenuItem(Commands.HELP_ABOUT);
-        }
-        
+        //var hasAboutItem = (brackets.platform !== "mac" || !brackets.nativeMenus);
+        //
+        //// Add final divider only if we have a homepage URL or twitter URL or about item
+        //if (hasAboutItem || brackets.config.homepage_url || brackets.config.twitter_url) {
+        //    menu.addMenuDivider();
+        //}
+        //
+        //if (brackets.config.homepage_url) {
+        //    menu.addMenuItem(Commands.HELP_HOMEPAGE);
+        //}
+        //
+        //if (brackets.config.twitter_url) {
+        //    menu.addMenuItem(Commands.HELP_TWITTER);
+        //}
+        //// supress redundant about menu item in mac shell
+        //if (hasAboutItem) {
+        //    menu.addMenuItem(Commands.HELP_ABOUT);
+        //}
+        //
         
         /*
          * Context Menus

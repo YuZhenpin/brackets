@@ -45,6 +45,7 @@
 }
 
 #healthdata-firstlaunch-popup {
+    display: none;
     max-width: 250px;
     right: 39px;
 }
