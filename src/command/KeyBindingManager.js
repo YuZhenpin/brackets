@@ -102,7 +102,7 @@ define(function (require, exports, module) {
                                   "-":     "\u2212" };
 
     var _specialCommands      = [Commands.EDIT_UNDO, Commands.EDIT_REDO, Commands.EDIT_SELECT_ALL,
-                                 Commands.EDIT_CUT, Commands.EDIT_COPY, Commands.EDIT_PASTE],
+                                 Commands.EDIT_PASTE],
         _reservedShortcuts    = ["Ctrl-Z", "Ctrl-Y", "Ctrl-A", "Ctrl-X", "Ctrl-C", "Ctrl-V"],
         _macReservedShortcuts = ["Cmd-,", "Cmd-H", "Cmd-Alt-H", "Cmd-M", "Cmd-Shift-Z", "Cmd-Q"],
         _keyNames             = ["Up", "Down", "Left", "Right", "Backspace", "Enter", "Space", "Tab",
