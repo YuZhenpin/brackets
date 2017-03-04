@@ -207,30 +207,30 @@ define(function (require, exports, module) {
 
         pendingDownloadRegistry = new $.Deferred();
 
-        $.ajax({
-            url: brackets.config.extension_registry,
-            dataType: "json",
-            cache: false
-        })
-            .done(function (data) {
-                exports.hasDownloadedRegistry = true;
-                Object.keys(data).forEach(function (id) {
-                    if (!extensions[id]) {
-                        extensions[id] = {};
-                    }
-                    extensions[id].registryInfo = data[id];
-                    synchronizeEntry(id);
-                });
-                exports.trigger("registryDownload");
-                pendingDownloadRegistry.resolve();
-            })
-            .fail(function () {
-                pendingDownloadRegistry.reject();
-            })
-            .always(function () {
-                // Make sure to clean up the pending registry so that new requests can be made.
-                pendingDownloadRegistry = null;
-            });
+        // $.ajax({
+        //     url: brackets.config.extension_registry,
+        //     dataType: "json",
+        //     cache: false
+        // })
+        //     .done(function (data) {
+        //         exports.hasDownloadedRegistry = true;
+        //         Object.keys(data).forEach(function (id) {
+        //             if (!extensions[id]) {
+        //                 extensions[id] = {};
+        //             }
+        //             extensions[id].registryInfo = data[id];
+        //             synchronizeEntry(id);
+        //         });
+        //         exports.trigger("registryDownload");
+        //         pendingDownloadRegistry.resolve();
+        //     })
+        //     .fail(function () {
+        //         pendingDownloadRegistry.reject();
+        //     })
+        //     .always(function () {
+        //         // Make sure to clean up the pending registry so that new requests can be made.
+        //         pendingDownloadRegistry = null;
+        //     });
 
         return pendingDownloadRegistry.promise();
     }
@@ -887,8 +887,8 @@ define(function (require, exports, module) {
         .on("load", _handleExtensionLoad)
         .on("loadFailed", _handleExtensionLoad)
         .on("disabled", _handleExtensionLoad);
-    
-    
+
+
     EventDispatcher.makeEventDispatcher(exports);
 
     // Public exports
@@ -918,9 +918,9 @@ define(function (require, exports, module) {
     exports.updateExtensions        = updateExtensions;
     exports.getAvailableUpdates     = getAvailableUpdates;
     exports.cleanAvailableUpdates   = cleanAvailableUpdates;
-    
+
     exports.hasDownloadedRegistry   = false;
-    
+
     exports.ENABLED       = ENABLED;
     exports.DISABLED      = DISABLED;
     exports.START_FAILED  = START_FAILED;
@@ -929,7 +929,7 @@ define(function (require, exports, module) {
     exports.LOCATION_DEV      = LOCATION_DEV;
     exports.LOCATION_USER     = LOCATION_USER;
     exports.LOCATION_UNKNOWN  = LOCATION_UNKNOWN;
-    
+
     // For unit testing only
     exports._getAutoInstallFiles    = _getAutoInstallFiles;
     exports._reset                  = _reset;
